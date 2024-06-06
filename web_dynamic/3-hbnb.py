@@ -16,9 +16,9 @@ def teardown_db(exception):
     storage.close()
 
 
-@app.route("/2-hbnb")
+@app.route("/3-hbnb")
 def hbnb_filters(id=None):
-    """Display a HTML page: 6-index.html"""
+    """Display a HTML page: 3-hbnb.html"""
     states = dict(
         [(state.id, state.name) for state in storage.all("State").values()]
     )
@@ -32,7 +32,7 @@ def hbnb_filters(id=None):
     )
     cache_id = str(uuid.uuid4())
     return render_template(
-        "2-hbnb.html",
+        "3-hbnb.html",
         cache_id=cache_id,
         states=states,
         amenities=amenities,
